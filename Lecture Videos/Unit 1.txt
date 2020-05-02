@@ -1,0 +1,272 @@
+Chapter 1 : Pytho Revision Tour
+
+Introduction to Python
+Tokens in Python
+Bearbones of a Python Program
+Variables and Assignment
+Simple I/O
+Data Types: Mutable & Immutable 
+Expressions in Python
+Statement Flow Control
+Conditional Statements: IF-Else
+Looping Statements: For Loop | While Loop
+Jump Statements
+More on Loops - Nested Loops & Loop-Else statement
+
+
+
+[1.2] Tokens in Python
+
+The smallest individual unit in a program is known as a token
+or lexical unit.
+
+	keywords: list them using help() in cmd
+	
+	Identifiers: Myfile, DATE9_7_2014, _CHK, FILE13
+	
+	Literals/Values:
+		String Literals:
+			Single Line Strings:""
+			Multi-Line Strings: "Hello\
+								World"
+			No backslash String: ''' Hello
+								World 
+								Welcom to Computer Tutor'''
+
+		Numeric Literals: int()
+
+		Boolean Literals: True, False
+
+		Special Literal: None
+
+	Operators: 
+		Arithmetic Operators: +,-,*,/,%,**,//
+		Bitwise Operators: &, ^, |
+		Shift Operators: <<, >>
+		Identity Operators: is, is not
+		Relational Operators: >, <, >=, <=, ==, !=
+		Logical Operators: and, or
+		Assignment: Operator: =
+		Membership Operator: in, not in
+		Arithmetic-Assignment Operator: /=, +=, -=, */, %=, **=, //=
+	
+	Punctuators: ' " # \ [ ] { } @ , : . ` = 
+
+
+[1.3] BearBones of a Python Program
+-> Go to "BearBones-Python.py"
+
+[1.4] Variable & Assignments
+	
+	Assignment Types:
+		Dynamic Typing:
+			x = 10
+			print(x)
+			x = "Hello World"
+			print(x)
+		
+		Multiple Assignments:
+			a=b=c=10
+			print(a)
+			print(b,c)
+
+			a,b,c = 10, 20, 30
+			print(a,b,c)
+			a,b = b,a 
+			print(a,b,c)
+
+
+
+[1.5] I/O in Python
+
+Input in Python:
+
+	variable = input (message to be displayed on screen)
+
+	name = input ("What's your name?")
+	print(name)
+	type(name)
+
+	age = input ("What's your age?")
+	print(age)
+	type(age)
+
+	Is python stupid? Nope. Input() will always return a str object
+
+	2 options for you to change the output:
+	age = int(input("Enter your age: "))
+	print(age)
+	type(age)
+
+	marks = float(int("Enter your marks: "))
+	print(marks)
+	type(marks)
+
+
+
+Output in Python:
+
+Formula: print(*objects, [sep='' or end='']) #sep can be blank, any string and end can have escaping characters (\n).
+
+
+	print("hello, world")
+	print ("hello,", "world")
+	print(17.5)
+	print(3.14159*(r*r))
+	print("I\'ve got", 90+5, "marks in Python because of CT.")
+
+	Note: Print statement auto-converts the output item to strings. Numeric values are computer but converted to strings before they're printed.
+
+	sep argument in print()
+
+	print("I", "learn", "from", "Computer", "Tutor.", sep='...')
+	print("I", "learn", "from", "Computer", "Tutor.", sep='###')
+	
+	What will happen without a sep argument?
+
+	print("I", "learn", "from", "Computer", "Tutor.")
+	# By default sep is blank space
+	
+	end argument in print()
+
+	print("My name is Ankit and I learn from", end='#')
+	print("Computer-Tutor")
+
+	What will happen without an end argument?
+	
+	print("My name is Ankit and I learn from")
+	print("Computer-Tutor")
+	# by default end is \n -> new line character
+
+------------------PRIP 1.1 (1)----------------------
+(a)
+(b)
+(c)
+----------------------------------------------------
+
+
+
+
+[1.6] Data Types in Python
+
+Data Types for Numbers:
+	
+	Integers
+		Integers (signed): +15, -7
+		Boolean: True or False
+	Floating point numbers: 1.14 (upto 15-digits)
+	Complex numbers z = A+Bi (A - Real Part, Bi - Imaginary Part)
+		z.real = A
+		z.imag = Bi
+
+Strings: "" - Strings -> Sequence of characters
+
+Lists: Group of comma-seperated values of any data-type wthin []
+	[10,9,8,7,6]
+	['C', 'T']
+	["Computer", "Tutor"]
+	["Ankit", 24, "21-12-96"]
+
+Tuples: Group of comma separated values of any data type within ()
+	(1,2,3,4,5)
+	('a', 'b', 'c', 'd', 'e')
+	('computer', 'tutor')
+
+Dictionaries: It is unordered set of comma-separated key:value pairs, within {} where every key has to be unique.
+
+	marks = {"Archit": 95, "Payanshi": 95}
+	marks["Archit"]
+	marks["Payanshi"]
+
+
+
+[1.7] Mutable Vs Immutable Types
+
+Immutable: The variable names are stores as references to a value-object. Each time you change the value, the variable's reference memory address changes. Eg: integers, floating point numbers, booleans, strings, tuples.
+
+	a = 5
+	b = a
+	c = 5
+	.
+	.
+	.
+	a = 10
+	c = 7
+	b = c
+
+Mutable: In the same memory address, new value can be stored as and when you want. Eg:
+	
+	L = Lists
+	S = Sets
+	D = Dictionary
+
+	RollNo = [1, 2, 3]
+	RollNo[1] = 40
+
+
+
+
+[1.8] Expressions and Evaluation
+
+Evaluating Arithmetic Operations:
+	
+	What is the output and resulting data-type?
+
+	a,b=3,9
+	c = b/a 
+
+	a,b = 3,6.0
+	c = b%a
+
+	12 //4 + 2 ** 4 - 5
+
+	3 + (4 — (11 // 5))** 2 % 2
+
+
+
+Evaluating Relational Expressions:
+All comparison operations in python have the same priority, which is lower than that of any arithmetic operations. Output of all relational expression is bool values.
+
+Chained expressions:
+	a<b<c : a<b and b<c
+	p<=q<=r : ?
+
+
+
+
+Evaluating Logical Expressions:
+
+Precedence of logical operators is lower than arithmetic operators
+	25/5 or 2.0 + 20/10 = 5 or 4.0
+Precedence among logical operators is
+	not > and > or
+Python minimizes internal work:
+	or - Python only evaluates the 2 argument if first is false
+	and - Python only evaluates the 2 argument if first is true
+
+Guess the program output?
+	(5<10) and (10<5) or (3<18) and not (8<18) = ?
+
+
+
+Math Library Functions
+It's a python standard library function for math related functons that work with type of numbers except complex numbers.
+
+	import math
+	math.<function_name>
+
+	Functions:
+		ceil - math.ceil(num)
+		sqrt - math.sqrt(num)
+		exp - math.exp(arg)
+		fabs - math.fabs(num)
+		floor - math.floor(num)
+		log - math.log(num,base)
+		log10 - math.log10(num)
+		pow - math.pow(base,exp)
+		sin - math.sin(arg)
+		cos - math.cos(arg)
+		tan - math.tan(arg)
+		degrees - math.degrees(x)
+		radians - math.radians(x)
+
